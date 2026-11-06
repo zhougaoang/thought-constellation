@@ -1,0 +1,50 @@
+{
+  "name": "thought-constellation",
+  "version": "0.1.0",
+  "description": "思想星图 — 把零散的思想片段编织成一张会生长的星图。",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhougaoang/thought-constellation.git"
+  },
+  "homepage": "https://github.com/zhougaoang/thought-constellation#readme",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "thinking",
+    "mind-map",
+    "notes",
+    "constellation"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "assets/*.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "author": "zhougaoang <2228517559an@gmail.com>"
+}
